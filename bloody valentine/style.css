@@ -1,0 +1,243 @@
+nav {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+}
+li{
+  list-style: none;
+}
+.artist {
+  z-index: 2;
+  position: fixed;
+  line-height: 80px;
+  margin: 0 40px;
+  color: #fff;
+}
+
+.watch {
+  z-index: 2;
+  position: fixed;
+  right: 0;
+  line-height: 80px;
+  margin: 0 40px;
+  color: grey;
+  padding: 0 10px;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 4px;
+}
+.watch i {
+      z-index: 2;
+      position: relative;
+      top: 1px;
+      padding-right: 6px;
+}
+
+body{
+  margin: 0%;
+  padding: 0%;
+  height: 100vh;
+  font-family: "Monument Extended";
+  background: url(https://i.imgur.com/dSUNxg6.gif);
+  background-size: cover;
+  background-repeat: repeat;
+  text-transform: uppercase;
+}
+.overlay{
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+ background: rgba(14, 14, 14, 0.8);
+}
+
+.gif-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48vw;
+  height: 46vh;
+  background: url(https:/66.media.tumblr.com/f7e74a85e50bb3c4ae124aef6a4fdadb/60efe81ac695c456-eb/s500x750/da5c08619c415c550340b563b800cebe0f6ef11a.gifv) no-repeat 50% 50%;
+  background-size: cover;
+  animation-delay: 2s;
+  animation: gif 4s cubic-bezier(0,.58,1,.58);
+}
+
+@keyframes gif {
+  0% {
+        width: 100%;
+        height: 100%;  
+  }
+
+  40% {
+        width: 100%;
+        height: 100%;
+  }
+
+  100% {
+        width: 48vw;
+        height: 46vh;
+  }
+}
+.title {
+  position: absolute;
+  top: 49%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+.title h1 {
+  color: rgb(180,36,146);
+  text-transform: uppercase;
+  font-size: 60px;
+  margin-bottom: 0%;
+}
+.title p {
+  color: grey;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 14px;
+
+}
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 4px;
+  text-shadow: -31px 0 rgb(185, 34, 59);
+  background: black;
+}
+.glitch::after {
+  left: -3px;
+  text-shadow: -3px 0 rgb(155, 26, 26);
+  background: black;
+}
+
+.glitch::before {
+  clip: rect(54px, 250px, 56px, 40px);
+}
+
+@keyframes noise-anim {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+  }
+}
+
+.glitch::before {
+  animation: noise-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {    
+  animation: noise-anim 3s infinite linear alternate-reverse;
+}
+
+@media(max-width: 900px) {
+  .gif-hero,.card {
+             display: none ;
+       }
+ 
+       .title {
+             top: 45%;
+             left: 50%;
+       }
+ 
+
+ }
+
+ /* page2 */
+
+ 
+ .overlay2{
+  z-index:-1;
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+ background: rgba(14, 14, 14, 0.8);
+}
+
+.card{
+  position: relative;
+  height: 310px;
+  width:400px;
+  background-color: #f513136b;
+  /* left: 410px; */
+  margin: auto;
+  /* top:60px; */
+}
+
+.card img{
+ height: 310px;
+ width: 400px;
+ border-radius: 10px;
+}
+
+
+.btn-container{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  padding: 1px;
+  background-color: #c90040a6;
+  border-radius: 50px;
+  bottom: 0px;
+  left: -3px;
+  white-space:nowrap;
+  overflow: hidden;
+  transition: width .3s ease-in;
+}
+
+.btn-container:hover{
+  width: calc(100% + 20px - 20px);
+  
+}
+
+.btn-container a{
+  display: inline-block;
+  width: 33px;
+  height: 32px;
+  text-align: center;  
+  font-size: 20px;
+  line-height:33px;
+  border-radius: 50%;
+  color: white;
+  margin:0px 5px;
+}
+
+.btn-container a:first-child{
+  margin-left: -1px;
+  background-color: red;
+  transition: transform .3s ease-in;
+}
+
+.btn-container:hover a:first-child{
+  transform: rotate(180deg);
+}
+
